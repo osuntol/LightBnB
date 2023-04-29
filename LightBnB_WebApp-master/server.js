@@ -1,6 +1,8 @@
 const path = require("path");
 const express = require("express");
 const cookieSession = require("cookie-session");
+const apiRoutes = require("./routes/apiRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,8 +18,6 @@ app.use(
   })
 );
 
-const apiRoutes = require("./routes/apiRoutes");
-const userRoutes = require("./routes/userRoutes");
 
 // /api/endpoints
 app.use("/api", apiRoutes);
