@@ -125,7 +125,6 @@ GROUP BY properties.id
     queryParams.push(options.minimum_price_per_night * 100, options.maximum_price_per_night * 100)
     queryString += `WHERE cost_per_night >= $${queryParams.length - 1} AND cost_per_night <= $${queryParams.length} `
   } else if (options.minimum_rating) {
-    console.log('MINIMUM RATING ---->',options.minimum_rating)
     queryParams.push(options.minimum_rating)
     queryString += `HAVING avg(rating) >= $${queryParams.length}`
   }
